@@ -7,9 +7,7 @@ import {
     CitationsIcon, 
     SocialMediaIcon, 
     TimelineIcon,
-    ArrowRightIcon,
-    ReportIcon,
-    GuaranteeIcon
+    ArrowRightIcon
 } from './components/Icons';
 
 const detailedServices = [
@@ -95,15 +93,15 @@ export const ServicesPage: React.FC = () => {
                     </div>
                 </BentoCard>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12 items-start">
                     {detailedServices.map((service, index) => (
-                        <BentoCard key={index} className="flex flex-col">
+                        <BentoCard key={index} className="flex flex-col h-full">
                             <div className="text-cyan-400 mb-4">{service.icon}</div>
                             <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
-                            <p className="text-slate-400 text-sm mb-6">{service.description}</p>
+                            <p className="text-slate-400 text-sm mb-6 flex-grow">{service.description}</p>
                             
                             <h4 className="font-semibold text-white mb-3 text-sm">Key Features:</h4>
-                            <ul className="list-disc list-inside text-slate-400 text-sm space-y-2 flex-grow">
+                            <ul className="list-disc list-inside text-slate-400 text-sm space-y-2">
                                 {service.keyFeatures.map((feature, i) => <li key={i}>{feature}</li>)}
                             </ul>
                             
@@ -121,7 +119,7 @@ export const ServicesPage: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 items-start">
                     <BentoCard>
                         <div className="text-fuchsia-400 mb-4"><TimelineIcon /></div>
                         <h3 className="text-xl font-bold text-white mb-2">Month 1: Foundation</h3>
@@ -138,16 +136,6 @@ export const ServicesPage: React.FC = () => {
                     </BentoCard>
                 </div>
                 
-                <BentoCard className="mt-6 text-center">
-                    <div className="flex justify-center items-center gap-4 mb-4">
-                        <div className="text-cyan-400 w-12 h-12"><ReportIcon /></div>
-                        <div className="text-fuchsia-400 w-12 h-12"><GuaranteeIcon /></div>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">Weekly Reports & ROI Guarantee</h3>
-                    <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-                        You'll receive comprehensive weekly performance reports covering GBP insights, website metrics, local rankings, citation status, social media engagement, and lead generation. We back our work with a 90-day ROI guarantee.
-                    </p>
-                </BentoCard>
             </div>
         </section>
     );
